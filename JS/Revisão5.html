@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Varredura de Compromissos</title>
+</head>
+<body>
+
+    <h2>Varredura de Compromissos</h2>
+
+    <input type="text" id="horarios" placeholder="Ex: 8, 12, 25, 15, -2, 20">
+    <button onclick="verificarHorarios()">Verificar Horários</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarHorarios() {
+            let texto = document.getElementById("horarios").value;
+            let resultado = document.getElementById("resultado");
+
+            let agendaHorarios = texto.split(",").map(Number);
+
+            let contagemValidos = 0;
+            resultado.innerHTML = "";
+
+            for (let horario of agendaHorarios) {
+
+                if (horario >= 0 && horario <= 23) {
+                    resultado.innerHTML +=
+                        "<p>Compromisso agendado para as " + horario + "h</p>";
+                    contagemValidos++;
+                }
+                else {
+                    resultado.innerHTML +=
+                        "<p>Atenção: O horário " + horario + "h é inválido!</p>";
+                }
+            }
+
+            resultado.innerHTML +=
+                "<strong>Total de compromissos válidos: " + contagemValidos + "</strong>";
+        }
+    </script>
+
+</body>
+</html>

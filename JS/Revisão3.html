@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formatador de Nomes para a Agenda</title>
+</head>
+<body>
+    
+    <h2>Formatador de Nomes para a Agenda</h2>
+
+    <input type="text" id="nome" placeholder="Digite seu Nome">
+    <button onclick="formatar()">Formatar</button>
+
+    <p id="nomeFormatado"></p>
+
+    <script>
+        function limparNomeContato(nome) {
+            nome = nome.trim();
+            nome = nome.toUpperCase();
+
+            let palavras = nome.split(" ");
+            let quantidade = palavras.length;
+
+            return nome + " (Palavras: " + quantidade + ")";
+        }
+
+        function formatar() {
+            let nomeDigitado = document.getElementById("nome").value;
+            let resultado = limparNomeContato(nomeDigitado);
+
+            document.getElementById("nomeFormatado").innerText = resultado;
+        }
+    </script>
+
+</body>
+</html>

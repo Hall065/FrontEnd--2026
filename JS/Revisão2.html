@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Gastos Mensais</title>
+</head>
+<body>
+
+    <h2>Calculadora de Gastos Mensais</h2>
+
+    <input type="number" id="salario" placeholder="Salário">
+    <input type="number" id="aluguel" placeholder="Aluguel">
+    <input type="number" id="alimentacao" placeholder="Alimentação">
+    <input type="number" id="lazer" placeholder="Lazer">
+    <button onclick="calcular()">Calcular</button> 
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let salario = Number(document.getElementById("salario").value);
+            let aluguel = Number(document.getElementById("aluguel").value);
+            let alimentacao = Number(document.getElementById("alimentacao").value);
+            let lazer = Number(document.getElementById("lazer").value);
+            let resultado = document.getElementById("resultado");
+
+            let saldo = salario - aluguel - alimentacao - lazer;
+
+            if (saldo > 0) {
+                resultado.innerText = "Saldo Positivo";
+            }
+            else if (saldo === 0) {
+                resultado.innerText = "No Limite";
+            }
+            else {
+                resultado.innerText = "Saldo Negativo";
+            }
+        }
+    </script>
+
+</body>
+</html>

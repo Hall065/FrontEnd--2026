@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de Dias para o Evento</title>
+</head>
+<body>
+
+    <h2>Contador de Dias para o Evento</h2>
+
+    <input type="date" id="dataEvento">
+    <button onclick="calcularDias()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDias() {
+            let hoje = new Date();
+
+            let dataEvento = new Date(document.getElementById("dataEvento").value);
+
+            let diferencaMs = dataEvento - hoje;
+
+            let dias = diferencaMs / (24 * 60 * 60 * 1000);
+
+            dias = Math.ceil(dias);
+
+            let resultado = document.getElementById("resultado");
+
+            if (isNaN(dias)) {
+                resultado.innerText = "Digite uma data válida.";
+            }
+            else if (dias < 0) {
+                resultado.innerText = "Essa data já passou!";
+            }
+            else {
+                resultado.innerText = "Faltam " + dias + " dias para o seu compromisso!";
+            }
+        }
+    </script>
+
+</body>
+</html>

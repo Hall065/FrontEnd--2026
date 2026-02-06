@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartão de Visitas</title>
+    <style>
+        :root {
+            --cor-cartao: #4a90e2;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cartao {
+            width: 250px;
+            height: 150px;
+            background-color: var(--cor-cartao);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="formulario">
+        <h3>Dados</h3>
+
+        <input type="text" placeholder="Nome" oninput="atualizarNome(this.value)">
+        <input type="text" placeholder="Cargo" oninput="atualizarCargo(this.value)">
+
+        <label>Cor do cartão:</label>
+        <select onchange="mudarCor(this.value)">
+            <option value="#4a90e2">Azul</option>
+            <option value="#2ecc71">Verde</option>
+            <option value="#e67e22">Laranja</option>
+            <option value="#9b59b6">Roxo</option>
+            <option value="#e74c3c">Vermelho</option>
+        </select>
+    </div>
+
+    <div class="cartao">
+        <h3 id="nomeCartao">Seu Nome</h3>
+        <p id="cargoCartao">Seu Cargo</p>
+    </div>
+
+    <script>
+        function atualizarNome(valor) {
+            document.getElementById("nomeCartao").innerText = valor;
+        }
+
+        function atualizarCargo(valor) {
+            document.getElementById("cargoCartao").innerText = valor;
+        }
+
+        function mudarCor(cor) {
+            document.documentElement.style.setProperty("--cor-cartao", cor);
+        }
+    </script>
+
+</body>
+</html>
