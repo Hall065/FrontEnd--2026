@@ -19,14 +19,19 @@
     <button onclick="converter()">Converter</button>
 
     <p id="resultado"></p>
+    <p id="resultado2"></p>
 
     <script>
         function converter() {
             let c = Number(document.getElementById("celsius").value);
             let f = c * 1.8 + 32;
+            let k = c + 273.15;
 
             document.getElementById("resultado").innerText =
                 "Temperatura em Fahrenheit: " + f.toFixed(1) + " °F";
+            
+            document.getElementById("resultado2").innerText =
+                "Temperatura em Kelvin: " + k.toFixed(2) + " °K";
 
             if (f > 80) {
                 document.body.style.backgroundColor = "coral";
