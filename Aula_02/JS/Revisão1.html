@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Agenda</title>
 </head>
+
 <body>
 
     <h2>Agenda</h2>
@@ -12,6 +14,7 @@
     <input type="number" id="prioridade" placeholder="Prioridade (1 a 10)">
     <button onclick="verificar()">Verificar</button>
 
+    <p id="turno"></p>
     <p id="resultado"></p>
 
     <script>
@@ -19,41 +22,46 @@
             let hora = Number(document.getElementById("hora").value);
             let prioridade = Number(document.getElementById("prioridade").value);
             let resultado = document.getElementById("resultado");
+            let turnoTexto = document.getElementById("turno");
 
             if (hora < 0 || hora > 23) {
                 resultado.innerText = "Horário Inválido";
-            } 
+                turnoTexto.innerText = "";
+            }
             else if (prioridade < 1 || prioridade > 10) {
                 resultado.innerText = "Nível de Prioridade Inválida";
-            } 
+                turnoTexto.innerText = "";
+            }
             else {
                 let turno = "";
 
-                if (hora <= 11) {
+                if (hora >= 6 && hora <= 11) {
                     turno = "Manhã";
-                } 
-                else if (hora <= 17) {
+                }
+                else if (hora >= 12 && hora <= 17) {
                     turno = "Tarde";
-                } 
+                }
                 else {
                     turno = "Noite";
                 }
 
+                // Mostra turno e prioridade
+                turnoTexto.innerText = `Turno: ${turno} | Prioridade: ${prioridade}`;
+
                 if (turno === "Noite") {
                     resultado.innerText = "TAREFA NÃO IMPORTANTE";
-                } 
-                else if (prioridade > 8 && (turno === "Manhã" || turno === "Tarde")) {
+                }
+                else if (prioridade > 8) {
                     resultado.innerText = "TAREFA CRÍTICA/URGENTE";
-                } 
-                else if (prioridade >= 7 && prioridade < 9 && (turno === "Manhã" || turno === "Tarde")) {
+                }
+                else if (prioridade >= 7) {
                     resultado.innerText = "TAREFA IMPORTANTE";
-                } 
+                }
                 else {
                     resultado.innerText = "TAREFA COMUM";
                 }
             }
         }
     </script>
-
 </body>
 </html>
