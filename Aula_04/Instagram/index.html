@@ -2,299 +2,228 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instragram</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <!-- TOP BAR (mobile) -->
-    <div class="topbar" id="topbar" style="display:none;">
-        <div class="topbar-logo">Instagram</div>
-        <div class="topbar-icons">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-            </svg>
+    <nav>
+        <img src="logoHeader.png" alt="Logo Header">
+        <input type="text" placeholder="Pesquisar" />
+        <div class="nav-links">
+            <a href="#">🏠</a>
+            <a href="#">🔍</a>
+            <a href="#">❤️</a>
+            <a href="#">👤</a>
         </div>
-    </div>
+    </nav>
 
     <div class="layout">
+
+        <div class="feed">
+
+            <!-- STORIES -->
+            <div class="stories">
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=me&backgroundColor=c0aede" />
+                    <span>Seu story</span>
+                </div>
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=ana&backgroundColor=ffd5dc" />
+                    <span>ana.silva</span>
+                </div>
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=leo&backgroundColor=d1f4e0" />
+                    <span>leo_farias</span>
+                </div>
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=maya&backgroundColor=ffecd2" />
+                    <span>maria.clara</span>
+                </div>
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=pedro&backgroundColor=b5ead7" />
+                    <span>pedro.cardorso</span>
+                </div>
+                <div class="story">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=clara&backgroundColor=ffc8dd" />
+                    <span>julia.slv</span>
+                </div>
+            </div>
+
+            <!-- POST 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=ana&backgroundColor=ffd5dc" />
+                    <div>
+                        <div class="username">ana.silva</div>
+                        <div class="location">São Paulo, SP</div>
+                    </div>
+                </div>
+                <img class="post-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" />
+                <div class="post-actions">
+                    <a href="#">❤️</a>
+                    <a href="#">💭</a>
+                    <a href="#">📤</a>
+                    <a href="#" class="save">🔖</a>
+                </div>
+                <div class="post-likes">2.847 curtidas</div>
+                <div class="post-caption"><strong>ana.silva</strong> Nada como um final de tarde na natureza 🌿✨</div>
+                <div class="post-comments">Ver todos os 48 comentários</div>
+                <div class="post-time">Há 3 horas</div>
+                <div class="post-comment-input">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                    <button>Publicar</button>
+                </div>
+            </div>
+
+            <!-- POST 2 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=leo&backgroundColor=d1f4e0" />
+                    <div>
+                        <div class="username">leo_farias</div>
+                        <div class="location">Rio de Janeiro, RJ</div>
+                    </div>
+                </div>
+                <video autoplay loop muted width="468" height="300" src="video.mp4" frameborder="0">
+                </video>
+                <div class="post-actions">
+                    <a href="#">❤️</a>
+                    <a href="#">💭</a>
+                    <a href="#">📤</a>
+                    <a href="#" class="save">🔖</a>
+                </div>
+                <div class="post-likes">1.203 curtidas</div>
+                <div class="post-caption"><strong>leo_farias</strong> Esse novo trailer tá sensacional! 🤙</div>
+                <div class="post-comments">Ver todos os 222 comentários</div>
+                <div class="post-time">Há 6 horas</div>
+                <div class="post-comment-input">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                    <button>Publicar</button>
+                </div>
+            </div>
+
+            <!-- POST 3 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=maya&backgroundColor=ffecd2" />
+                    <div>
+                        <div class="username">maria.clara</div>
+                    </div>
+                </div>
+                <img class="post-image" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80" />
+                <div class="post-actions">
+                    <a href="#">❤️</a>
+                    <a href="#">💭</a>
+                    <a href="#">📤</a>
+                    <a href="#" class="save">🔖</a>
+                </div>
+                <div class="post-likes">5.611 curtidas</div>
+                <div class="post-caption"><strong>maria.clara</strong> Aurora boreal pela primeira vez 😭🌌</div>
+                <div class="post-comments">Ver todos os 134 comentários</div>
+                <div class="post-time">Há 1 dia</div>
+                <div class="post-comment-input">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                    <button>Publicar</button>
+                </div>
+            </div>
+
+            <!-- POST 4 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=pedro&backgroundColor=b5ead7" />
+                    <div>
+                        <div class="username">pedro.cardorso</div>
+                        <div class="location">Florianópolis, SC</div>
+                    </div>
+                </div>
+                <img class="post-image" src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&q=80" />
+                <div class="post-actions">
+                    <a href="#">❤️</a>
+                    <a href="#">💭</a>
+                    <a href="#">📤</a>
+                    <a href="#" class="save">🔖</a>
+                </div>
+                <div class="post-likes">892 curtidas</div>
+                <div class="post-caption"><strong>pedro.cardorso</strong> Campo de flores silvestres 🌸 melhor trilha do
+                    ano</div>
+                <div class="post-comments">Ver todos os 17 comentários</div>
+                <div class="post-time">Há 2 dias</div>
+                <div class="post-comment-input">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                    <button>Publicar</button>
+                </div>
+            </div>
+
+        </div>
+
         <!-- SIDEBAR -->
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-logo">Instagram</div>
-            <div class="nav-item active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-                Início
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-                Pesquisar
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="23 7 16 12 23 17 23 7" />
-                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                </svg>
-                Explorar
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
-                    <line x1="7" y1="2" x2="7" y2="22" />
-                    <line x1="17" y1="2" x2="17" y2="22" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <line x1="2" y1="7" x2="7" y2="7" />
-                    <line x1="2" y1="17" x2="7" y2="17" />
-                    <line x1="17" y1="17" x2="22" y2="17" />
-                    <line x1="17" y1="7" x2="22" y2="7" />
-                </svg>
-                Reels
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                </svg>
-                Mensagens
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                </svg>
-                Notificações
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M12 8v4l3 3" />
-                </svg>
-                Criar
-            </div>
-            <div class="nav-item" style="margin-top:auto;">
-                <div style="width:24px;height:24px;border-radius:50%;background:#efefef;overflow:hidden;">
-                    <img src="https://i.pravatar.cc/48?img=3" style="width:100%;height:100%;object-fit:cover;" alt="">
-                </div>
-                Perfil
-            </div>
-            <div class="nav-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-                Mais
-            </div>
-        </nav>
+        <div class="sidebar">
 
-        <!-- FEED -->
-        <main class="main">
-            <div class="feed-scroll">
-                <!-- STORIES -->
-                <div class="stories">
-                    <div class="story story-add">
-                        <div class="story-ring seen">
-                            <div class="story-inner">
-                                <img class="story-img" src="https://i.pravatar.cc/56?img=3" alt="">
-                            </div>
-                        </div>
-                        <div class="story-add-btn">+</div>
-                        <span class="story-name">Seu story</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=10"
-                                    alt=""></div>
-                        </div><span class="story-name">maria_s</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=15"
-                                    alt=""></div>
-                        </div><span class="story-name">joao_rj</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=20"
-                                    alt=""></div>
-                        </div><span class="story-name">ana.lima</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring seen">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=25"
-                                    alt=""></div>
-                        </div><span class="story-name">pedro_sp</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=30"
-                                    alt=""></div>
-                        </div><span class="story-name">carol.m</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=35"
-                                    alt=""></div>
-                        </div><span class="story-name">lucas_dev</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring seen">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=40"
-                                    alt=""></div>
-                        </div><span class="story-name">bru.foto</span>
-                    </div>
-                    <div class="story">
-                        <div class="story-ring">
-                            <div class="story-inner"><img class="story-img" src="https://i.pravatar.cc/56?img=45"
-                                    alt=""></div>
-                        </div><span class="story-name">fe_travel</span>
-                    </div>
+            <div class="side-profile">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=me&backgroundColor=c0aede" />
+                <div class="info">
+                    <div class="name">voce.aqui</div>
+                    <div class="fullname">Seu Nome</div>
                 </div>
-
-                <!-- POSTS -->
-                <div id="posts-container"></div>
+                <a href="#">Trocar</a>
             </div>
-        </main>
 
-        <!-- SUGGESTED PANEL -->
-        <aside class="suggested-panel" id="suggested">
-            <div class="user-suggest">
-                <img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=3" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">voce_mesmo</div>
-                    <div class="user-suggest-sub">Você</div>
-                </div>
-                <button class="user-suggest-btn">Trocar</button>
-            </div>
-            <div class="section-title">
+            <div class="suggest-title">
                 <span>Sugestões para você</span>
-                <a>Ver tudo</a>
+                <a href="#">Ver tudo</a>
             </div>
-            <div class="user-suggest"><img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=11" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">fotografiabr</div>
-                    <div class="user-suggest-sub">Sugerido para você</div>
-                </div><button class="user-suggest-btn">Seguir</button>
+
+            <div class="suggest-user">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=julia&backgroundColor=ffd6e7" />
+                <div class="info">
+                    <div class="uname">julia.artes</div>
+                    <div class="reason">Seguido por leo_becker</div>
+                </div>
+                <a href="#">Seguir</a>
             </div>
-            <div class="user-suggest"><img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=22" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">viagem_mundo</div>
-                    <div class="user-suggest-sub">Segue maria_s</div>
-                </div><button class="user-suggest-btn">Seguir</button>
+
+            <div class="suggest-user">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=marco&backgroundColor=c7f2a4" />
+                <div class="info">
+                    <div class="uname">marco_tulio</div>
+                    <div class="reason">Novo no Instagram</div>
+                </div>
+                <a href="#">Seguir</a>
             </div>
-            <div class="user-suggest"><img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=33" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">cozinha_top</div>
-                    <div class="user-suggest-sub">Sugerido para você</div>
-                </div><button class="user-suggest-btn">Seguir</button>
+
+            <div class="suggest-user">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=bea&backgroundColor=fce4ec" />
+                <div class="info">
+                    <div class="uname">bia.viagens</div>
+                    <div class="reason">Seguido por ana.silva</div>
+                </div>
+                <a href="#">Seguir</a>
             </div>
-            <div class="user-suggest"><img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=44" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">tech.news.br</div>
-                    <div class="user-suggest-sub">Novo no Instagram</div>
-                </div><button class="user-suggest-btn">Seguir</button>
+
+            <div class="suggest-user">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=rafa&backgroundColor=e8f5e9" />
+                <div class="info">
+                    <div class="uname">rafa.code</div>
+                    <div class="reason">Novo no Instagram</div>
+                </div>
+                <a href="#">Seguir</a>
             </div>
-            <div class="user-suggest"><img class="user-suggest-avatar" src="https://i.pravatar.cc/44?img=55" alt="">
-                <div class="user-suggest-info">
-                    <div class="user-suggest-name">moda.brasil</div>
-                    <div class="user-suggest-sub">Sugerido para você</div>
-                </div><button class="user-suggest-btn">Seguir</button>
+
+            <div class="footer">
+                <a href="#">Sobre</a> · <a href="#">Ajuda</a> · <a href="#">Privacidade</a> · <a
+                    href="#">Termos</a><br />
+                © 2026 INSTRAGRAM
             </div>
-            <p style="font-size:12px;color:#c7c7c7;margin-top:20px;">
-                Sobre · Ajuda · Privacidade · Termos · Locais · Idioma · Meta Verified<br><br>
-                © 2024 INSTAGRAM DA META
-            </p>
-        </aside>
+
+        </div>
+
     </div>
 
-    <script>
-        const posts = [
-            { user: 'maria_s', avatar: 10, img: 'https://picsum.photos/seed/insta1/600/600', location: 'São Paulo, Brasil', likes: 1243, caption: 'Dia perfeito na cidade! ☀️', time: '2 HORAS' },
-            { user: 'joao_rj', avatar: 15, img: 'https://picsum.photos/seed/insta2/600/600', location: 'Rio de Janeiro', likes: 892, caption: 'Vista incrível daqui 🌊 #riodejaneiro #praia', time: '4 HORAS' },
-            { user: 'ana.lima', avatar: 20, img: 'https://picsum.photos/seed/insta3/600/600', location: 'Florianópolis', likes: 3421, caption: 'Melhor final de semana ever com @carol.m 🥂✨', time: '6 HORAS' },
-            { user: 'pedro_sp', avatar: 25, img: 'https://picsum.photos/seed/insta4/600/600', location: '', likes: 567, caption: 'Trabalhando no novo projeto 💻 Em breve novidades!', time: '8 HORAS' },
-            { user: 'carol.m', avatar: 30, img: 'https://picsum.photos/seed/insta5/600/600', location: 'Belo Horizonte', likes: 2109, caption: 'Fim de tarde lindo 🌅 #natureza #pordosol', time: '10 HORAS' },
-            { user: 'lucas_dev', avatar: 35, img: 'https://picsum.photos/seed/insta6/600/600', location: 'Curitiba', likes: 788, caption: 'Explorando novos lugares sempre que possível 📍', time: '12 HORAS' },
-            { user: 'bru.foto', avatar: 40, img: 'https://picsum.photos/seed/insta7/600/600', location: 'Salvador, BA', likes: 4532, caption: 'A fotografia é a arte de congelar o tempo 📷', time: '1 DIA' },
-            { user: 'fe_travel', avatar: 45, img: 'https://picsum.photos/seed/insta8/600/600', location: 'Manaus, AM', likes: 1876, caption: 'Amazônia de tirar o fôlego 🌿 #amazônia #natureza', time: '1 DIA' },
-        ];
-
-        const container = document.getElementById('posts-container');
-        posts.forEach((p, i) => {
-            container.innerHTML += `
-    <div class="post">
-      <div class="post-header">
-        <div class="post-avatar-wrap">
-          <img class="post-avatar" src="https://i.pravatar.cc/32?img=${p.avatar}" alt="">
-        </div>
-        <div class="post-user">
-          <div class="post-username">${p.user}</div>
-          ${p.location ? `<div class="post-location">${p.location}</div>` : ''}
-        </div>
-        <div class="post-dots">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><circle cx="12" cy="12" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg>
-        </div>
-      </div>
-      <img class="post-image" src="${p.img}" alt="" loading="lazy">
-      <div class="post-actions">
-        <svg id="heart-${i}" class="heart-anim" viewBox="0 0 24 24" onclick="toggleLike(${i})" style="cursor:pointer;">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        <svg class="post-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-      </div>
-      <div class="post-likes" id="likes-${i}">${p.likes.toLocaleString('pt-BR')} curtidas</div>
-      <div class="post-caption"><span>${p.user}</span> ${p.caption}</div>
-      <div class="post-comments-link">Ver todos os 12 comentários</div>
-      <div class="post-time">${p.time}</div>
-      <div class="post-add-comment">
-        <input type="text" placeholder="Adicione um comentário...">
-        <button>Publicar</button>
-      </div>
-    </div>`;
-        });
-
-        const liked = {};
-        function toggleLike(i) {
-            const el = document.getElementById(`heart-${i}`);
-            const likesEl = document.getElementById(`likes-${i}`);
-            liked[i] = !liked[i];
-            el.classList.toggle('liked', liked[i]);
-            const base = posts[i].likes + (liked[i] ? 1 : 0);
-            likesEl.textContent = base.toLocaleString('pt-BR') + ' curtidas';
-        }
-
-        // Responsive
-        function checkWidth() {
-            if (window.innerWidth < 960) {
-                document.getElementById('topbar').style.display = 'flex';
-                document.getElementById('sidebar').style.display = 'none';
-                document.getElementById('suggested').style.display = 'none';
-                document.querySelector('.main').style.marginTop = '60px';
-            } else {
-                document.getElementById('topbar').style.display = 'none';
-                document.getElementById('sidebar').style.display = 'flex';
-                document.getElementById('suggested').style.display = 'block';
-                document.querySelector('.main').style.marginTop = '0';
-            }
-        }
-        checkWidth();
-        window.addEventListener('resize', checkWidth);
-    </script>
 </body>
 
 </html>
