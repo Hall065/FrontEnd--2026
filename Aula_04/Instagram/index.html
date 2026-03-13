@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,155 +7,265 @@
     <title>Instragram</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav>
-        <img src="logoHeader.png" alt="Logo Header">
-        <input type="text" placeholder="Pesquisar" />
-        <div class="nav-links">
-            <a href="#">🏠</a>
-            <a href="#">🔍</a>
-            <a href="#">❤️</a>
-            <a href="#">👤</a>
+    <!-- NAV LATERAL ESQUERDA -->
+    <nav class="sidenav">
+        <svg class="sidenav-logo" viewBox="0 0 24 24" fill="var(--icon-color)" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+
+        <a href="#" class="sidenav-item active">
+            <span class="material-icons">home</span>
+            <span class="sidenav-label">Página inicial</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">play_circle_outline</span>
+            <span class="sidenav-label">Reels</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">search</span>
+            <span class="sidenav-label">Pesquisa</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">explore</span>
+            <span class="sidenav-label">Explorar</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">favorite_border</span>
+            <span class="sidenav-label">Notificações</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">add_circle_outline</span>
+            <span class="sidenav-label">Criar</span>
+        </a>
+        <a href="#" class="sidenav-item">
+            <span class="material-icons">account_circle</span>
+            <span class="sidenav-label">Perfil</span>
+        </a>
+
+        <div class="sidenav-bottom">
+            <button class="sidenav-item theme-toggle" onclick="toggleTheme()">
+                <span class="material-icons" id="theme-icon">dark_mode</span>
+                <span class="sidenav-label">Tema</span>
+            </button>
+            <a href="#" class="sidenav-item">
+                <span class="material-icons">menu</span>
+                <span class="sidenav-label">Mais</span>
+            </a>
         </div>
     </nav>
 
-    <div class="layout">
+    <!-- BOTÃO MENSAGENS FIXO -->
+    <button class="fab-msg" onclick="alert('Finge q foi pro mensagens 😉')">
+        <span class="material-icons">chat</span>
+    </button>
 
+    <div class="page-wrapper">
+    <div class="layout">
         <div class="feed">
 
             <!-- STORIES -->
             <div class="stories">
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=me&backgroundColor=c0aede" />
-                    <span>Seu story</span>
+                <button class="stories-arrow" id="stories-prev" onclick="scrollStories(-1)" style="display:none;">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+                <div class="stories-inner" id="stories-inner">
+                    <div class="story" onclick="openStory(0)">
+                        <div class="story-ring new-story">
+                            <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" />
+                        </div>
+                        <span>Seu story</span>
+                    </div>
+                    <div class="story" onclick="openStory(1)" id="story-1">
+                        <div class="story-ring">
+                            <img src="https://i.pinimg.com/736x/f0/21/ec/f021ecfb624d5a2b8880791234c557cc.jpg" />
+                        </div>
+                        <span>ana.silva</span>
+                    </div>
+                    <div class="story" onclick="openStory(2)" id="story-2">
+                        <div class="story-ring">
+                            <img src="https://i.pinimg.com/736x/3d/e7/d9/3de7d9c0b9131d7f28c0f2396e7e801f.jpg" />
+                        </div>
+                        <span>leo_farias</span>
+                    </div>
+                    <div class="story" onclick="openStory(3)" id="story-3">
+                        <div class="story-ring">
+                            <img src="https://i.pinimg.com/736x/b3/5e/28/b35e284102c06b7912a198e7ee5921da.jpg" />
+                        </div>
+                        <span>maria.clara</span>
+                    </div>
+                    <div class="story" onclick="openStory(4)" id="story-4">
+                        <div class="story-ring">
+                            <img src="https://i.pinimg.com/736x/eb/21/b7/eb21b78ca42da83699df72f2b0c2e17f.jpg" />
+                        </div>
+                        <span>pedro.cardorso</span>
+                    </div>
+                    <div class="story" onclick="openStory(5)" id="story-5">
+                        <div class="story-ring">
+                            <img src="https://i.pinimg.com/736x/81/bc/3a/81bc3a6e257392d0c509e1f02b844639.jpg" />
+                        </div>
+                        <span>julia.slv</span>
+                    </div>
                 </div>
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=ana&backgroundColor=ffd5dc" />
-                    <span>ana.silva</span>
-                </div>
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=leo&backgroundColor=d1f4e0" />
-                    <span>leo_farias</span>
-                </div>
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=maya&backgroundColor=ffecd2" />
-                    <span>maria.clara</span>
-                </div>
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=pedro&backgroundColor=b5ead7" />
-                    <span>pedro.cardorso</span>
-                </div>
-                <div class="story">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=clara&backgroundColor=ffc8dd" />
-                    <span>julia.slv</span>
-                </div>
+                <button class="stories-arrow" id="stories-next" onclick="scrollStories(1)">
+                    <span class="material-icons">chevron_right</span>
+                </button>
             </div>
 
-            <!-- POST 1 -->
+            <!-- POST 1 - CARROSSEL -->
             <div class="post">
                 <div class="post-header">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=ana&backgroundColor=ffd5dc" />
+                    <img src="https://i.pinimg.com/736x/f0/21/ec/f021ecfb624d5a2b8880791234c557cc.jpg" />
                     <div>
                         <div class="username">ana.silva</div>
                         <div class="location">São Paulo, SP</div>
                     </div>
+                    <span class="material-icons more-icon">more_horiz</span>
                 </div>
-                <img class="post-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" />
+
+                <!-- CARROSSEL -->
+                <div class="carousel" id="carousel-1">
+                    <div class="carousel-track">
+                        <img class="post-image" src="https://i.pinimg.com/1200x/96/61/3d/96613deb4b7da0bcacbe7c2b8ca3b571.jpg" />
+                        <img class="post-image" src="https://i.pinimg.com/736x/0c/de/e3/0cdee3c2493b332dbb8ffdcfcb338c01.jpg" />
+                        <img class="post-image" src="https://i.pinimg.com/1200x/e4/b2/99/e4b2996e180f57d313362188ba193447.jpg" />
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveCarousel('carousel-1', -1)">
+                        <span class="material-icons">chevron_left</span>
+                    </button>
+                    <button class="carousel-btn next" onclick="moveCarousel('carousel-1', 1)">
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
                 <div class="post-actions">
-                    <a href="#">❤️</a>
-                    <a href="#">💭</a>
-                    <a href="#">📤</a>
-                    <a href="#" class="save">🔖</a>
+                    <a href="#" onclick="toggleLike(this); return false;"><span class="material-icons">favorite_border</span></a>
+                    <a href="#" onclick="toggleComments(this); return false;"><span class="material-icons">chat_bubble_outline</span></a>
+                    <a href="#" onclick="alert('Enviado!'); return false;"><span class="material-icons">send</span></a>
+                    <a href="#" class="save" onclick="toggleSave(this); return false;"><span class="material-icons">bookmark_border</span></a>
                 </div>
-                <div class="post-likes">2.847 curtidas</div>
-                <div class="post-caption"><strong>ana.silva</strong> Nada como um final de tarde na natureza 🌿✨</div>
-                <div class="post-comments">Ver todos os 48 comentários</div>
+                <div class="post-likes" data-count="2847">2.847 curtidas</div>
+                <div class="post-caption"><strong>ana.silva</strong> Japão é Incrivel! 🏮</div>
                 <div class="post-time">Há 3 horas</div>
+                <div class="comments-section" style="display:none;">
+                    <div class="comments-list">
+                        <div class="comment"><img src="https://i.pinimg.com/736x/3d/e7/d9/3de7d9c0b9131d7f28c0f2396e7e801f.jpg"/><div><strong>leo_farias</strong> Que incrível! Quero ir! 😍<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/b3/5e/28/b35e284102c06b7912a198e7ee5921da.jpg"/><div><strong>maria.clara</strong> Que lugar lindo 🌸<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/eb/21/b7/eb21b78ca42da83699df72f2b0c2e17f.jpg"/><div><strong>pedro.cardorso</strong> Sorte sua!! 🇯🇵<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                    </div>
+                </div>
                 <div class="post-comment-input">
-                    <input type="text" placeholder="Adicione um comentário..." />
-                    <button>Publicar</button>
+                    <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" class="comment-avatar"/>
+                    <input type="text" placeholder="Adicione um comentário..." onkeydown="submitComment(event, this)"/>
+                    <button onclick="submitComment({key:'Enter'}, this.previousElementSibling)">Publicar</button>
                 </div>
             </div>
 
-            <!-- POST 2 -->
+            <!-- POST 2 - VIDEO -->
             <div class="post">
                 <div class="post-header">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=leo&backgroundColor=d1f4e0" />
+                    <img src="https://i.pinimg.com/736x/3d/e7/d9/3de7d9c0b9131d7f28c0f2396e7e801f.jpg" />
                     <div>
                         <div class="username">leo_farias</div>
                         <div class="location">Rio de Janeiro, RJ</div>
                     </div>
+                    <span class="material-icons more-icon">more_horiz</span>
                 </div>
-                <video autoplay loop muted width="468" height="300" src="video.mp4" frameborder="0">
-                </video>
+                <video autoplay loop muted playsinline style="width:100%;display:block;" src="video.mp4"></video>
                 <div class="post-actions">
-                    <a href="#">❤️</a>
-                    <a href="#">💭</a>
-                    <a href="#">📤</a>
-                    <a href="#" class="save">🔖</a>
+                    <a href="#" onclick="toggleLike(this); return false;"><span class="material-icons">favorite_border</span></a>
+                    <a href="#" onclick="toggleComments(this); return false;"><span class="material-icons">chat_bubble_outline</span></a>
+                    <a href="#" onclick="alert('Enviado!'); return false;"><span class="material-icons">send</span></a>
+                    <a href="#" class="save" onclick="toggleSave(this); return false;"><span class="material-icons">bookmark_border</span></a>
                 </div>
-                <div class="post-likes">1.203 curtidas</div>
+                <div class="post-likes" data-count="1203">1.203 curtidas</div>
                 <div class="post-caption"><strong>leo_farias</strong> Esse novo trailer tá sensacional! 🤙</div>
-                <div class="post-comments">Ver todos os 222 comentários</div>
                 <div class="post-time">Há 6 horas</div>
+                <div class="comments-section" style="display:none;">
+                    <div class="comments-list">
+                        <div class="comment"><img src="https://i.pinimg.com/736x/f0/21/ec/f021ecfb624d5a2b8880791234c557cc.jpg"/><div><strong>ana.silva</strong> Hype demais!! 🔥<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/81/bc/3a/81bc3a6e257392d0c509e1f02b844639.jpg"/><div><strong>julia.slv</strong> Tô esperando ansiosamente 😭<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                    </div>
+                </div>
                 <div class="post-comment-input">
-                    <input type="text" placeholder="Adicione um comentário..." />
-                    <button>Publicar</button>
+                    <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" class="comment-avatar"/>
+                    <input type="text" placeholder="Adicione um comentário..." onkeydown="submitComment(event, this)"/>
+                    <button onclick="submitComment({key:'Enter'}, this.previousElementSibling)">Publicar</button>
                 </div>
             </div>
 
             <!-- POST 3 -->
             <div class="post">
                 <div class="post-header">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=maya&backgroundColor=ffecd2" />
+                    <img src="https://i.pinimg.com/736x/b3/5e/28/b35e284102c06b7912a198e7ee5921da.jpg" />
                     <div>
                         <div class="username">maria.clara</div>
                     </div>
+                    <span class="material-icons more-icon">more_horiz</span>
                 </div>
-                <img class="post-image" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80" />
+                <img class="post-image" style="width:100%;display:block;" src="https://i.pinimg.com/1200x/35/cf/1b/35cf1b9145faa1bbfd19905efcb0dc77.jpg" />
                 <div class="post-actions">
-                    <a href="#">❤️</a>
-                    <a href="#">💭</a>
-                    <a href="#">📤</a>
-                    <a href="#" class="save">🔖</a>
+                    <a href="#" onclick="toggleLike(this); return false;"><span class="material-icons">favorite_border</span></a>
+                    <a href="#" onclick="toggleComments(this); return false;"><span class="material-icons">chat_bubble_outline</span></a>
+                    <a href="#" onclick="alert('Enviado!'); return false;"><span class="material-icons">send</span></a>
+                    <a href="#" class="save" onclick="toggleSave(this); return false;"><span class="material-icons">bookmark_border</span></a>
                 </div>
-                <div class="post-likes">5.611 curtidas</div>
-                <div class="post-caption"><strong>maria.clara</strong> Aurora boreal pela primeira vez 😭🌌</div>
-                <div class="post-comments">Ver todos os 134 comentários</div>
+                <div class="post-likes" data-count="5611">5.611 curtidas</div>
+                <div class="post-caption"><strong>maria.clara</strong> Aurora boreal pela primeira vez, sem palavras!</div>
                 <div class="post-time">Há 1 dia</div>
+                <div class="comments-section" style="display:none;">
+                    <div class="comments-list">
+                        <div class="comment"><img src="https://i.pinimg.com/736x/f0/21/ec/f021ecfb624d5a2b8880791234c557cc.jpg"/><div><strong>ana.silva</strong> Que coisa mais linda 😭🌌<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/eb/21/b7/eb21b78ca42da83699df72f2b0c2e17f.jpg"/><div><strong>pedro.cardorso</strong> Sonho ver isso um dia!<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/3d/e7/d9/3de7d9c0b9131d7f28c0f2396e7e801f.jpg"/><div><strong>leo_farias</strong> Que lugar é esse?? 🤩<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                    </div>
+                </div>
                 <div class="post-comment-input">
-                    <input type="text" placeholder="Adicione um comentário..." />
-                    <button>Publicar</button>
+                    <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" class="comment-avatar"/>
+                    <input type="text" placeholder="Adicione um comentário..." onkeydown="submitComment(event, this)"/>
+                    <button onclick="submitComment({key:'Enter'}, this.previousElementSibling)">Publicar</button>
                 </div>
             </div>
 
             <!-- POST 4 -->
             <div class="post">
                 <div class="post-header">
-                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=pedro&backgroundColor=b5ead7" />
+                    <img src="https://i.pinimg.com/736x/eb/21/b7/eb21b78ca42da83699df72f2b0c2e17f.jpg" />
                     <div>
                         <div class="username">pedro.cardorso</div>
                         <div class="location">Florianópolis, SC</div>
                     </div>
+                    <span class="material-icons more-icon">more_horiz</span>
                 </div>
-                <img class="post-image" src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&q=80" />
+                <img class="post-image" style="width:100%;display:block;" src="https://i.pinimg.com/736x/bf/39/4d/bf394dc9d3bd414b01df12dec7a91486.jpg" />
                 <div class="post-actions">
-                    <a href="#">❤️</a>
-                    <a href="#">💭</a>
-                    <a href="#">📤</a>
-                    <a href="#" class="save">🔖</a>
+                    <a href="#" onclick="toggleLike(this); return false;"><span class="material-icons">favorite_border</span></a>
+                    <a href="#" onclick="toggleComments(this); return false;"><span class="material-icons">chat_bubble_outline</span></a>
+                    <a href="#" onclick="alert('Enviado!'); return false;"><span class="material-icons">send</span></a>
+                    <a href="#" class="save" onclick="toggleSave(this); return false;"><span class="material-icons">bookmark_border</span></a>
                 </div>
-                <div class="post-likes">892 curtidas</div>
-                <div class="post-caption"><strong>pedro.cardorso</strong> Campo de flores silvestres 🌸 melhor trilha do
-                    ano</div>
-                <div class="post-comments">Ver todos os 17 comentários</div>
+                <div class="post-likes" data-count="892">892 curtidas</div>
+                <div class="post-caption"><strong>pedro.cardorso</strong> Primavera, melhor estação!</div>
                 <div class="post-time">Há 2 dias</div>
+                <div class="comments-section" style="display:none;">
+                    <div class="comments-list">
+                        <div class="comment"><img src="https://i.pinimg.com/736x/b3/5e/28/b35e284102c06b7912a198e7ee5921da.jpg"/><div><strong>maria.clara</strong> As flores estão incríveis 🌸<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                        <div class="comment"><img src="https://i.pinimg.com/736x/81/bc/3a/81bc3a6e257392d0c509e1f02b844639.jpg"/><div><strong>julia.slv</strong> Que trilha linda!! 😍<a href="#" class="comment-like" onclick="toggleCommentLike(this);return false;"><span class="material-icons">favorite_border</span></a></div></div>
+                    </div>
+                </div>
                 <div class="post-comment-input">
-                    <input type="text" placeholder="Adicione um comentário..." />
-                    <button>Publicar</button>
+                    <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" class="comment-avatar"/>
+                    <input type="text" placeholder="Adicione um comentário..." onkeydown="submitComment(event, this)"/>
+                    <button onclick="submitComment({key:'Enter'}, this.previousElementSibling)">Publicar</button>
                 </div>
             </div>
 
@@ -163,11 +273,10 @@
 
         <!-- SIDEBAR -->
         <div class="sidebar">
-
             <div class="side-profile">
-                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=me&backgroundColor=c0aede" />
+                <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" />
                 <div class="info">
-                    <div class="name">voce.aqui</div>
+                    <div class="name">joao.vitor</div>
                     <div class="fullname">Seu Nome</div>
                 </div>
                 <a href="#">Trocar</a>
@@ -179,51 +288,105 @@
             </div>
 
             <div class="suggest-user">
-                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=julia&backgroundColor=ffd6e7" />
+                <img src="https://i.pinimg.com/736x/82/92/d7/8292d7783cec70bd9e0671f9230eb1c0.jpg" />
                 <div class="info">
                     <div class="uname">julia.artes</div>
                     <div class="reason">Seguido por leo_becker</div>
                 </div>
-                <a href="#">Seguir</a>
+                <button class="follow-btn" onclick="toggleFollow(this)">Seguir</button>
             </div>
 
             <div class="suggest-user">
-                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=marco&backgroundColor=c7f2a4" />
+                <img src="https://i.pinimg.com/736x/d4/b9/ec/d4b9ec8d293414a904fafc7053c5126d.jpg" />
                 <div class="info">
                     <div class="uname">marco_tulio</div>
                     <div class="reason">Novo no Instagram</div>
                 </div>
-                <a href="#">Seguir</a>
+                <button class="follow-btn" onclick="toggleFollow(this)">Seguir</button>
             </div>
 
             <div class="suggest-user">
-                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=bea&backgroundColor=fce4ec" />
+                <img src="https://i.pinimg.com/736x/aa/16/9f/aa169f13ffba4e83e6d61927051b67a5.jpg" />
                 <div class="info">
                     <div class="uname">bia.viagens</div>
                     <div class="reason">Seguido por ana.silva</div>
                 </div>
-                <a href="#">Seguir</a>
+                <button class="follow-btn" onclick="toggleFollow(this)">Seguir</button>
             </div>
 
             <div class="suggest-user">
-                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=rafa&backgroundColor=e8f5e9" />
+                <img src="https://i.pinimg.com/736x/71/95/09/719509e185e0056b62685bf331347f90.jpg" />
                 <div class="info">
                     <div class="uname">rafa.code</div>
                     <div class="reason">Novo no Instagram</div>
                 </div>
-                <a href="#">Seguir</a>
+                <button class="follow-btn" onclick="toggleFollow(this)">Seguir</button>
             </div>
 
             <div class="footer">
-                <a href="#">Sobre</a> · <a href="#">Ajuda</a> · <a href="#">Privacidade</a> · <a
-                    href="#">Termos</a><br />
+                <a href="#">Sobre</a> · <a href="#">Ajuda</a> · <a href="#">Privacidade</a> · <a href="#">Termos</a><br />
                 © 2026 INSTRAGRAM
             </div>
-
         </div>
+    </div>
+    </div><!-- end page-wrapper -->
 
+    <!-- STORY VIEWER -->
+    <div class="story-overlay" id="story-overlay" onclick="closeStory()">
+        <div class="story-viewer" onclick="event.stopPropagation()">
+            <div class="story-progress-bar">
+                <div class="story-progress" id="story-progress"></div>
+            </div>
+            <div class="story-viewer-header">
+                <img id="story-viewer-avatar" src="" />
+                <span id="story-viewer-name"></span>
+                <button onclick="closeStory()"><span class="material-icons">close</span></button>
+            </div>
+            <img id="story-viewer-img" src="" />
+            <button class="story-nav prev-story" onclick="prevStory()"><span class="material-icons">chevron_left</span></button>
+            <button class="story-nav next-story" onclick="nextStory()"><span class="material-icons">chevron_right</span></button>
+        </div>
     </div>
 
-</body>
+    <!-- MODAL DE COMENTÁRIOS -->
+    <div class="comment-modal-overlay" id="comment-modal" onclick="closeCommentModal()">
+        <div class="comment-modal" onclick="event.stopPropagation()">
+            <!-- Lado esquerdo: mídia do post -->
+            <div class="cm-media">
+                <div id="cm-media-content"></div>
+            </div>
+            <!-- Lado direito: comentários -->
+            <div class="cm-right">
+                <div class="cm-header">
+                    <img id="cm-avatar" src="" />
+                    <div>
+                        <div class="cm-username" id="cm-username"></div>
+                        <div class="cm-location" id="cm-location"></div>
+                    </div>
+                    <button class="cm-close" onclick="closeCommentModal()">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <div class="cm-comments-list" id="cm-comments-list"></div>
+                <div class="cm-actions">
+                    <a href="#" id="cm-like-btn" onclick="cmToggleLike(); return false;"><span class="material-icons">favorite_border</span></a>
+                    <a href="#" onclick="return false;"><span class="material-icons">chat_bubble_outline</span></a>
+                    <a href="#" onclick="alert('Enviado!'); return false;"><span class="material-icons">send</span></a>
+                    <a href="#" id="cm-save-btn" class="save" onclick="cmToggleSave(); return false;"><span class="material-icons">bookmark_border</span></a>
+                </div>
+                <div class="cm-likes" id="cm-likes"></div>
+                <div class="cm-input-row">
+                    <img src="https://i.pinimg.com/736x/d3/ce/e3/d3cee34439bb3e3035ec5251ad185a48.jpg" class="comment-avatar"/>
+                    <input id="cm-input" type="text" placeholder="Adicione um comentário..." onkeydown="cmSubmitComment(event)"/>
+                    <button onclick="cmSubmitComment({key:'Enter'})">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- TOAST -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
 </html>
