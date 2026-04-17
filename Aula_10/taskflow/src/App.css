@@ -1,0 +1,248 @@
+/* ─── Variáveis de prioridade ─────────────────────────────────────────────── */
+:root {
+  --low:    #28a745;
+  --medium: #ffc107;
+  --high:   #dc3545;
+}
+
+/* ─── Container principal ────────────────────────────────────────────────── */
+.app-container {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+header p {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+/* ─── Formulário de criação ───────────────────────────────────────────────── */
+.form-section form {
+  display: flex;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.form-section input  { flex: 3; padding: 10px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 0.9rem; }
+.form-section select { flex: 1; padding: 10px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 0.9rem; }
+.form-section button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.form-section button:hover { background: #555; }
+
+/* ─── Busca em tempo real ─────────────────────────────────────────────────── */
+.search-section {
+  margin-bottom: 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #adb5bd;
+}
+
+/* ─── Filtros ────────────────────────────────────────────────────────────── */
+.filter-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.filter-section button {
+  padding: 8px 18px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.filter-section button:hover  { background: #f1f3f5; }
+.filter-section button.active { background: #333; color: #fff; border-color: #333; }
+
+/* ─── Grid de tarefas ─────────────────────────────────────────────────────── */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.empty-msg {
+  color: #6c757d;
+  text-align: center;
+  padding: 2rem 0;
+  grid-column: 1 / -1;
+}
+
+/* ─── Card de tarefa ─────────────────────────────────────────────────────── */
+.task-card {
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 8px solid #ccc;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-card.baixa { border-left-color: var(--low);    }
+.task-card.média { border-left-color: var(--medium); }
+.task-card.alta  { border-left-color: var(--high);   }
+.task-card.done  { opacity: 0.6; background: #e9ecef; }
+
+/* ─── Conteúdo do card ───────────────────────────────────────────────────── */
+.task-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.task-content h3.strikethrough {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.task-content span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.task-content small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+/* ─── Input de edição inline ─────────────────────────────────────────────── */
+.edit-input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1px solid #adb5bd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+/* ─── Ações do card ──────────────────────────────────────────────────────── */
+.task-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.task-actions button {
+  flex: 1;
+  padding: 6px 4px;
+  font-size: 0.78rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+.task-actions button:hover  { background: #f1f3f5; }
+.task-actions button.delete { border-color: #f5c6c6; color: #c0392b; }
+.task-actions button.delete:hover { background: #fff5f5; }
+
+/* ─── Modal de confirmação ───────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal p {
+  margin-bottom: 6px;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.modal strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  word-break: break-word;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.modal-actions button {
+  padding: 8px 22px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.modal-actions button:hover { background: #f1f3f5; }
+
+.modal-actions button.modal-delete {
+  background: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.modal-actions button.modal-delete:hover { background: #c0392b; }
