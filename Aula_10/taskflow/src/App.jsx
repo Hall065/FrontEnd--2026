@@ -6,18 +6,20 @@ const PRIORITY_ORDER = { Alta: 0, Média: 1, Baixa: 2 };
 function App() {
   const [taskText, setTaskText] = useState('');
   const [priority, setPriority] = useState('Baixa');
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(() => {
+    try {
+      const saved = localStorage.getItem('@taskflow_data');
+      return saved ? JSON.parse(saved) : [];
+    } catch (error) {
+      console.warn('Erro ao carregar tarefas do localStorage:', error);
+      return [];
+    }
+  });
   const [filter, setFilter] = useState('Todas');
   const [search, setSearch] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState('');
   const [deleteModal, setDeleteModal] = useState({ open: false, id: null, label: '' });
-
-  // Carrega do localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem('@taskflow_data');
-    if (saved) setTaskList(JSON.parse(saved));
-  }, []);
 
   // Salva no localStorage
   useEffect(() => {
